@@ -112,17 +112,19 @@ IRCCloudPlugin *__shared_plugin;
 }
 
 -(void)pluginWillBeUnloadedFromMemory {
-    _socket.session = nil;
-    [_socket disconnect];
-    NSMutableArray *clients = worldController().clientList.mutableCopy;
-    for(int i = 0; i < clients.count; i++) {
-        if([[clients objectAtIndex:i] isKindOfClass:IRCCloudClient.class]) {
-            [clients removeObjectAtIndex:i];
-            i--;
+    [self performBlockOnMainThread:^{
+        _socket.session = nil;
+        [_socket disconnect];
+        NSMutableArray *clients = worldController().clientList.mutableCopy;
+        for(int i = 0; i < clients.count; i++) {
+            if([[clients objectAtIndex:i] isKindOfClass:IRCCloudClient.class]) {
+                [clients removeObjectAtIndex:i];
+                i--;
+            }
         }
-    }
-    [worldController() setClientList:clients];
-    [worldController() save];
+        [worldController() setClientList:clients];
+        [worldController() save];
+    }];
 }
 
 -(void)showConnectMenu:(id)sender {
@@ -147,6 +149,7 @@ IRCCloudPlugin *__shared_plugin;
     IRCCloudClient *client = [[IRCCloudClient alloc] initWithConfig:config];
     client.viewController = [world createViewControllerWithClient:client channel:nil];
     client.cid = cid;
+    client.isConnectedToZNC = YES;
     [client enableCapability:ClientIRCv3SupportedCapabilityEchoMessage];
     NSMutableArray *clients = worldController().clientList.mutableCopy;
     [clients addObject:client];

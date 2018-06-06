@@ -15,6 +15,9 @@
 
 @interface IRCClient(Private)
 -(id)initWithConfig:(IRCClientConfig *)config;
+-(BOOL)isTerminating;
+-(void)setIsTerminating:(BOOL)value;
+-(void)prepareForApplicationTerminationPostflight;
 @end
 
 @implementation IRCCloudClient
@@ -50,10 +53,21 @@
 }
 
 - (void)disconnect {
-    [[IRCCloudSocket sharedInstance] disconnect:_cid msg:nil handler:nil];
+    if(!self.isTerminating)
+        [[IRCCloudSocket sharedInstance] disconnect:_cid msg:nil handler:nil];
+}
+
+- (void)quitWithComment:(NSString *)comment {
+    if(self.isTerminating || self.disconnectType == IRCClientDisconnectComputerSleepMode)
+        return;
+    [super quitWithComment:comment];
 }
 
 - (NSDictionary *)configurationDictionary {
     return @{@"proxyType":@(9999),@"proxyPort":@(9999),@"proxyAddress":@"IRCCLOUD_STUB"};
+}
+
+- (void)prepareForApplicationTermination {
+    [self prepareForApplicationTerminationPostflight];
 }
 @end

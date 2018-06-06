@@ -20,6 +20,8 @@
 -(void)setIsConnecting:(BOOL)connecting;
 -(void)setIsLoggedIn:(BOOL)isLoggedIn;
 -(void)setUserNickname:(NSString *)nickname;
+-(void)setIsConnectedToZNC:(BOOL)value;
+-(void)setZncBouncerIsPlayingBackHistory:(BOOL)value;
 
 //Private methods we need to use
 -(id)initWithConfig:(IRCClientConfig *)config;
