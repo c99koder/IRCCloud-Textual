@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="IRCCloudPlugin">
+            <connections>
+                <outlet property="_email" destination="3dw-m4-5zO" id="YlD-SX-OE1"/>
+                <outlet property="_password" destination="Dlg-36-keB" id="0z0-yV-WcW"/>
+                <outlet property="_prefsView" destination="LOA-uM-qhd" id="BPG-m3-EVC"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="LOA-uM-qhd">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="123"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3dw-m4-5zO">
+                    <rect key="frame" x="20" y="81" width="160" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="E-mail Address" drawsBackground="YES" id="8Fq-0d-m16">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dlg-36-keB">
+                    <rect key="frame" x="20" y="49" width="160" height="22"/>
+                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="AS3-eb-hcE">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <allowedInputSourceLocales>
+                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                        </allowedInputSourceLocales>
+                    </secureTextFieldCell>
+                </secureTextField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="feg-3J-Kws">
+                    <rect key="frame" x="14" y="13" width="172" height="32"/>
+                    <buttonCell key="cell" type="push" title="Login to IRCCloud" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WLY-Jj-Krq">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="loginButtonClicked:" target="-2" id="aS2-YM-mI3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="feg-3J-Kws" firstAttribute="leading" secondItem="LOA-uM-qhd" secondAttribute="leading" constant="20" id="00b-g4-vEb"/>
+                <constraint firstItem="feg-3J-Kws" firstAttribute="top" secondItem="Dlg-36-keB" secondAttribute="bottom" constant="8" id="1PC-FM-ZNx"/>
+                <constraint firstAttribute="bottom" secondItem="feg-3J-Kws" secondAttribute="bottom" constant="20" id="1rt-rc-V5K"/>
+                <constraint firstItem="3dw-m4-5zO" firstAttribute="top" secondItem="LOA-uM-qhd" secondAttribute="top" constant="20" id="4Ol-ll-zK7"/>
+                <constraint firstAttribute="trailing" secondItem="Dlg-36-keB" secondAttribute="trailing" constant="20" id="AQM-fV-X5Z"/>
+                <constraint firstItem="Dlg-36-keB" firstAttribute="top" secondItem="3dw-m4-5zO" secondAttribute="bottom" constant="10" id="KHr-4F-llu"/>
+                <constraint firstAttribute="trailing" secondItem="feg-3J-Kws" secondAttribute="trailing" constant="20" id="ciT-IE-al3"/>
+                <constraint firstItem="3dw-m4-5zO" firstAttribute="leading" secondItem="LOA-uM-qhd" secondAttribute="leading" constant="20" id="gaB-7A-oiz"/>
+                <constraint firstItem="Dlg-36-keB" firstAttribute="leading" secondItem="LOA-uM-qhd" secondAttribute="leading" constant="20" id="mwO-fj-t5h"/>
+                <constraint firstAttribute="trailing" secondItem="3dw-m4-5zO" secondAttribute="trailing" constant="20" id="oM3-a4-nKV"/>
+            </constraints>
+            <point key="canvasLocation" x="161" y="197.5"/>
+        </customView>
+    </objects>
+</document>

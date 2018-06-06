@@ -21,6 +21,8 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2018 Sam Steele. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string></string>
+	<string>IRCCloudPlugin</string>
+	<key>MinimumTextualVersion</key>
+	<string>7.0.0</string>
 </dict>
 </plist>

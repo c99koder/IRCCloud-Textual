@@ -6,9 +6,76 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2211322E20C8141A00305DB5 /* IRCCloudPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211322D20C8141A00305DB5 /* IRCCloudPlugin.m */; };
+		2211323120C81AD100305DB5 /* IRCCloudClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211323020C81AD100305DB5 /* IRCCloudClient.m */; };
+		2211323820C8281000305DB5 /* IRCCloudSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211323620C8281000305DB5 /* IRCCloudSocket.m */; };
+		2211323B20C828DF00305DB5 /* IRCCloudJSONObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211323A20C828DF00305DB5 /* IRCCloudJSONObject.m */; };
+		2211326F20C8362400305DB5 /* HandshakeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211324E20C8362400305DB5 /* HandshakeHeader.m */; };
+		2211327020C8362400305DB5 /* WebSocketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211325020C8362400305DB5 /* WebSocketMessage.m */; };
+		2211327120C8362400305DB5 /* WebSocketConnectConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211325520C8362400305DB5 /* WebSocketConnectConfig.m */; };
+		2211327220C8362400305DB5 /* WebSocketFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211325820C8362400305DB5 /* WebSocketFragment.m */; };
+		2211327320C8362400305DB5 /* WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211325A20C8362400305DB5 /* WebSocket.m */; };
+		2211327420C8362400305DB5 /* MutableQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211325B20C8362400305DB5 /* MutableQueue.m */; };
+		2211327520C8362400305DB5 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211325C20C8362400305DB5 /* AsyncSocket.m */; };
+		2211327620C8362400305DB5 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211325D20C8362400305DB5 /* NSData+Base64.m */; };
+		2211327720C8362400305DB5 /* SBJson5StreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211326020C8362400305DB5 /* SBJson5StreamWriter.m */; };
+		2211327820C8362400305DB5 /* SBJson5Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211326420C8362400305DB5 /* SBJson5Writer.m */; };
+		2211327920C8362400305DB5 /* SBJson5StreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211326620C8362400305DB5 /* SBJson5StreamTokeniser.m */; };
+		2211327A20C8362400305DB5 /* SBJson5StreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211326720C8362400305DB5 /* SBJson5StreamWriterState.m */; };
+		2211327B20C8362400305DB5 /* SBJson5Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211326920C8362400305DB5 /* SBJson5Parser.m */; };
+		2211327C20C8362400305DB5 /* SBJson5StreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211326C20C8362400305DB5 /* SBJson5StreamParserState.m */; };
+		2211327D20C8362400305DB5 /* SBJson5StreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211326E20C8362400305DB5 /* SBJson5StreamParser.m */; };
+		2211328120C83EFE00305DB5 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2211327E20C8399F00305DB5 /* GCDAsyncSocket.m */; };
+		2211328320C863F900305DB5 /* IRCCloudPrefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2211328220C863F900305DB5 /* IRCCloudPrefs.xib */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2211322120C812EC00305DB5 /* IRCCloud-Textual.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IRCCloud-Textual.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2211322420C812ED00305DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2211322A20C813C400305DB5 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = ../../../../../Applications/Textual.app/Contents/Headers; sourceTree = "<group>"; };
+		2211322C20C8141A00305DB5 /* IRCCloudPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRCCloudPlugin.h; sourceTree = "<group>"; };
+		2211322D20C8141A00305DB5 /* IRCCloudPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRCCloudPlugin.m; sourceTree = "<group>"; };
+		2211322F20C81AD100305DB5 /* IRCCloudClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRCCloudClient.h; sourceTree = "<group>"; };
+		2211323020C81AD100305DB5 /* IRCCloudClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRCCloudClient.m; sourceTree = "<group>"; };
+		2211323620C8281000305DB5 /* IRCCloudSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRCCloudSocket.m; sourceTree = "<group>"; };
+		2211323720C8281000305DB5 /* IRCCloudSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRCCloudSocket.h; sourceTree = "<group>"; };
+		2211323920C828DF00305DB5 /* IRCCloudJSONObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRCCloudJSONObject.h; sourceTree = "<group>"; };
+		2211323A20C828DF00305DB5 /* IRCCloudJSONObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRCCloudJSONObject.m; sourceTree = "<group>"; };
+		2211324E20C8362400305DB5 /* HandshakeHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandshakeHeader.m; sourceTree = "<group>"; };
+		2211324F20C8362400305DB5 /* WebSocketFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketFragment.h; sourceTree = "<group>"; };
+		2211325020C8362400305DB5 /* WebSocketMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketMessage.m; sourceTree = "<group>"; };
+		2211325120C8362400305DB5 /* UnittWebSocketClient-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UnittWebSocketClient-Prefix.pch"; sourceTree = "<group>"; };
+		2211325220C8362400305DB5 /* MutableQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutableQueue.h; sourceTree = "<group>"; };
+		2211325320C8362400305DB5 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
+		2211325420C8362400305DB5 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		2211325520C8362400305DB5 /* WebSocketConnectConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketConnectConfig.m; sourceTree = "<group>"; };
+		2211325620C8362400305DB5 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		2211325720C8362400305DB5 /* WebSocketMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketMessage.h; sourceTree = "<group>"; };
+		2211325820C8362400305DB5 /* WebSocketFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketFragment.m; sourceTree = "<group>"; };
+		2211325920C8362400305DB5 /* HandshakeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandshakeHeader.h; sourceTree = "<group>"; };
+		2211325A20C8362400305DB5 /* WebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocket.m; sourceTree = "<group>"; };
+		2211325B20C8362400305DB5 /* MutableQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableQueue.m; sourceTree = "<group>"; };
+		2211325C20C8362400305DB5 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		2211325D20C8362400305DB5 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		2211325E20C8362400305DB5 /* WebSocketConnectConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketConnectConfig.h; sourceTree = "<group>"; };
+		2211326020C8362400305DB5 /* SBJson5StreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson5StreamWriter.m; sourceTree = "<group>"; };
+		2211326120C8362400305DB5 /* SBJson5StreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson5StreamWriterState.h; sourceTree = "<group>"; };
+		2211326220C8362400305DB5 /* SBJson5Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson5Parser.h; sourceTree = "<group>"; };
+		2211326320C8362400305DB5 /* SBJson5StreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson5StreamParserState.h; sourceTree = "<group>"; };
+		2211326420C8362400305DB5 /* SBJson5Writer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson5Writer.m; sourceTree = "<group>"; };
+		2211326520C8362400305DB5 /* SBJson5StreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson5StreamParser.h; sourceTree = "<group>"; };
+		2211326620C8362400305DB5 /* SBJson5StreamTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson5StreamTokeniser.m; sourceTree = "<group>"; };
+		2211326720C8362400305DB5 /* SBJson5StreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson5StreamWriterState.m; sourceTree = "<group>"; };
+		2211326820C8362400305DB5 /* SBJson5StreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson5StreamWriter.h; sourceTree = "<group>"; };
+		2211326920C8362400305DB5 /* SBJson5Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson5Parser.m; sourceTree = "<group>"; };
+		2211326A20C8362400305DB5 /* SBJson5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson5.h; sourceTree = "<group>"; };
+		2211326B20C8362400305DB5 /* SBJson5Writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson5Writer.h; sourceTree = "<group>"; };
+		2211326C20C8362400305DB5 /* SBJson5StreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson5StreamParserState.m; sourceTree = "<group>"; };
+		2211326D20C8362400305DB5 /* SBJson5StreamTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson5StreamTokeniser.h; sourceTree = "<group>"; };
+		2211326E20C8362400305DB5 /* SBJson5StreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson5StreamParser.m; sourceTree = "<group>"; };
+		2211327E20C8399F00305DB5 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		2211328220C863F900305DB5 /* IRCCloudPrefs.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IRCCloudPrefs.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,10 +108,77 @@
 		2211322320C812ED00305DB5 /* IRCCloud-Textual */ = {
 			isa = PBXGroup;
 			children = (
+				2211322A20C813C400305DB5 /* Headers */,
 				2211322420C812ED00305DB5 /* Info.plist */,
+				2211322C20C8141A00305DB5 /* IRCCloudPlugin.h */,
+				2211322D20C8141A00305DB5 /* IRCCloudPlugin.m */,
+				2211322F20C81AD100305DB5 /* IRCCloudClient.h */,
+				2211323020C81AD100305DB5 /* IRCCloudClient.m */,
+				2211323C20C82F8800305DB5 /* IRCCloud API */,
+				2211328220C863F900305DB5 /* IRCCloudPrefs.xib */,
 			);
 			path = "IRCCloud-Textual";
 			sourceTree = "<group>";
+		};
+		2211323C20C82F8800305DB5 /* IRCCloud API */ = {
+			isa = PBXGroup;
+			children = (
+				2211325F20C8362400305DB5 /* SBJson */,
+				2211324D20C8362400305DB5 /* WebSocket */,
+				2211323920C828DF00305DB5 /* IRCCloudJSONObject.h */,
+				2211323A20C828DF00305DB5 /* IRCCloudJSONObject.m */,
+				2211323720C8281000305DB5 /* IRCCloudSocket.h */,
+				2211323620C8281000305DB5 /* IRCCloudSocket.m */,
+			);
+			path = "IRCCloud API";
+			sourceTree = "<group>";
+		};
+		2211324D20C8362400305DB5 /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				2211327E20C8399F00305DB5 /* GCDAsyncSocket.m */,
+				2211324E20C8362400305DB5 /* HandshakeHeader.m */,
+				2211324F20C8362400305DB5 /* WebSocketFragment.h */,
+				2211325020C8362400305DB5 /* WebSocketMessage.m */,
+				2211325120C8362400305DB5 /* UnittWebSocketClient-Prefix.pch */,
+				2211325220C8362400305DB5 /* MutableQueue.h */,
+				2211325320C8362400305DB5 /* WebSocket.h */,
+				2211325420C8362400305DB5 /* AsyncSocket.h */,
+				2211325520C8362400305DB5 /* WebSocketConnectConfig.m */,
+				2211325620C8362400305DB5 /* NSData+Base64.h */,
+				2211325720C8362400305DB5 /* WebSocketMessage.h */,
+				2211325820C8362400305DB5 /* WebSocketFragment.m */,
+				2211325920C8362400305DB5 /* HandshakeHeader.h */,
+				2211325A20C8362400305DB5 /* WebSocket.m */,
+				2211325B20C8362400305DB5 /* MutableQueue.m */,
+				2211325C20C8362400305DB5 /* AsyncSocket.m */,
+				2211325D20C8362400305DB5 /* NSData+Base64.m */,
+				2211325E20C8362400305DB5 /* WebSocketConnectConfig.h */,
+			);
+			path = WebSocket;
+			sourceTree = SOURCE_ROOT;
+		};
+		2211325F20C8362400305DB5 /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				2211326020C8362400305DB5 /* SBJson5StreamWriter.m */,
+				2211326120C8362400305DB5 /* SBJson5StreamWriterState.h */,
+				2211326220C8362400305DB5 /* SBJson5Parser.h */,
+				2211326320C8362400305DB5 /* SBJson5StreamParserState.h */,
+				2211326420C8362400305DB5 /* SBJson5Writer.m */,
+				2211326520C8362400305DB5 /* SBJson5StreamParser.h */,
+				2211326620C8362400305DB5 /* SBJson5StreamTokeniser.m */,
+				2211326720C8362400305DB5 /* SBJson5StreamWriterState.m */,
+				2211326820C8362400305DB5 /* SBJson5StreamWriter.h */,
+				2211326920C8362400305DB5 /* SBJson5Parser.m */,
+				2211326A20C8362400305DB5 /* SBJson5.h */,
+				2211326B20C8362400305DB5 /* SBJson5Writer.h */,
+				2211326C20C8362400305DB5 /* SBJson5StreamParserState.m */,
+				2211326D20C8362400305DB5 /* SBJson5StreamTokeniser.h */,
+				2211326E20C8362400305DB5 /* SBJson5StreamParser.m */,
+			);
+			path = SBJson;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -102,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2211328320C863F900305DB5 /* IRCCloudPrefs.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +247,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2211326F20C8362400305DB5 /* HandshakeHeader.m in Sources */,
+				2211327220C8362400305DB5 /* WebSocketFragment.m in Sources */,
+				2211322E20C8141A00305DB5 /* IRCCloudPlugin.m in Sources */,
+				2211327A20C8362400305DB5 /* SBJson5StreamWriterState.m in Sources */,
+				2211327B20C8362400305DB5 /* SBJson5Parser.m in Sources */,
+				2211327D20C8362400305DB5 /* SBJson5StreamParser.m in Sources */,
+				2211327820C8362400305DB5 /* SBJson5Writer.m in Sources */,
+				2211327120C8362400305DB5 /* WebSocketConnectConfig.m in Sources */,
+				2211327720C8362400305DB5 /* SBJson5StreamWriter.m in Sources */,
+				2211323B20C828DF00305DB5 /* IRCCloudJSONObject.m in Sources */,
+				2211327620C8362400305DB5 /* NSData+Base64.m in Sources */,
+				2211323820C8281000305DB5 /* IRCCloudSocket.m in Sources */,
+				2211323120C81AD100305DB5 /* IRCCloudClient.m in Sources */,
+				2211327520C8362400305DB5 /* AsyncSocket.m in Sources */,
+				2211327020C8362400305DB5 /* WebSocketMessage.m in Sources */,
+				2211327420C8362400305DB5 /* MutableQueue.m in Sources */,
+				2211328120C83EFE00305DB5 /* GCDAsyncSocket.m in Sources */,
+				2211327C20C8362400305DB5 /* SBJson5StreamParserState.m in Sources */,
+				2211327320C8362400305DB5 /* WebSocket.m in Sources */,
+				2211327920C8362400305DB5 /* SBJson5StreamTokeniser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +296,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -199,7 +354,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -230,9 +385,16 @@
 		2211322820C812ED00305DB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = /Applications/Textual.app/Contents/MacOS/Textual;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HDPGZU5AY8;
+				FRAMEWORK_SEARCH_PATHS = "\"/Applications/Textual.app/Contents/Frameworks/**\"";
+				HEADER_SEARCH_PATHS = (
+					"\"/Applications/Textual.app/Contents/Headers/**\"",
+					"$(PROJECT_DIR)/SBJson",
+					"$(PROJECT_DIR)/WebSocket",
+				);
 				INFOPLIST_FILE = "IRCCloud-Textual/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.c99.IRCCloud-Textual";
@@ -245,9 +407,16 @@
 		2211322920C812ED00305DB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = /Applications/Textual.app/Contents/MacOS/Textual;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HDPGZU5AY8;
+				FRAMEWORK_SEARCH_PATHS = "\"/Applications/Textual.app/Contents/Frameworks/**\"";
+				HEADER_SEARCH_PATHS = (
+					"\"/Applications/Textual.app/Contents/Headers/**\"",
+					"$(PROJECT_DIR)/SBJson",
+					"$(PROJECT_DIR)/WebSocket",
+				);
 				INFOPLIST_FILE = "IRCCloud-Textual/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.c99.IRCCloud-Textual";
