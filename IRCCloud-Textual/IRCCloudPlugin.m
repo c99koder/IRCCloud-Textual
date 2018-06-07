@@ -281,9 +281,7 @@ IRCCloudPlugin *__shared_plugin;
                 prefix.address = [o objectForKey:@"from_host"];
                 prefix.hostmask = [o objectForKey:@"hostmask"];
                 m.sender = prefix;
-                
-                if(backlog)
-                    m.isPrintOnlyMessage = YES;
+                m.isHistoric = backlog;
 
                 [client processIncomingMessage:m];
             }
@@ -316,7 +314,8 @@ IRCCloudPlugin *__shared_plugin;
                 prefix.address = [o objectForKey:@"from_host"];
                 prefix.hostmask = [o objectForKey:@"hostmask"];
                 m.sender = prefix;
-                
+                m.isHistoric = backlog;
+
                 if(backlog)
                     m.isPrintOnlyMessage = YES;
 
@@ -338,7 +337,8 @@ IRCCloudPlugin *__shared_plugin;
                 prefix.address = [o objectForKey:@"from_host"];
                 prefix.hostmask = [o objectForKey:@"hostmask"];
                 m.sender = prefix;
-                
+                m.isHistoric = backlog;
+
                 if(backlog)
                     m.isPrintOnlyMessage = YES;
                 
@@ -359,7 +359,8 @@ IRCCloudPlugin *__shared_plugin;
                 prefix.address = [o objectForKey:@"from_host"];
                 prefix.hostmask = [o objectForKey:@"hostmask"];
                 m.sender = prefix;
-                
+                m.isHistoric = backlog;
+
                 if(backlog)
                     m.isPrintOnlyMessage = YES;
 
