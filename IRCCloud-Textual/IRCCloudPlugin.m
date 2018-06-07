@@ -199,6 +199,7 @@ IRCCloudPlugin *__shared_plugin;
 
 - (void)handleEvent:(NSNotification *)notification {
     kIRCEvent event = [[notification.userInfo objectForKey:kIRCCloudEventKey] intValue];
+    BOOL backlog = [[notification.userInfo objectForKey:@"backlog"] boolValue];
     IRCCloudJSONObject *o = notification.object;
     IRCCloudClient *client;
     
@@ -227,7 +228,12 @@ IRCCloudPlugin *__shared_plugin;
                     config.channelName = [o objectForKey:@"name"];
                     config.type = [type isEqualToString:@"channel"]?IRCChannelChannelType:IRCChannelPrivateMessageType;
                     IRCChannel *c = [worldController() createChannelWithConfig:config onClient:client];
-                    c.status = IRCChannelStatusParted;
+                    if([type isEqualToString:@"channel"]) {
+                        c.status = IRCChannelStatusParted;
+                        [c deactivate];
+                    } else {
+                        [c activate];
+                    }
                 }
             }
             break;
@@ -236,12 +242,12 @@ IRCCloudPlugin *__shared_plugin;
             if(client) {
                 IRCChannel *c = [client findChannelOrCreate:[o objectForKey:@"chan"]];
                 if(c) {
+                    c.status = IRCChannelStatusJoined;
+                    [c activate];
                     if([[[o objectForKey:@"topic"] objectForKey:@"text"] isKindOfClass:NSString.class])
                         c.topic = [[o objectForKey:@"topic"] objectForKey:@"text"];
                     else
                         c.topic = nil;
-                    c.status = IRCChannelStatusJoined;
-                    [c activate];
                     for(NSDictionary *member in [o objectForKey:@"members"]) {
                         if(member) {
                             IRCUser *user = [client findUser:[member objectForKey:@"nick"]];
@@ -276,6 +282,9 @@ IRCCloudPlugin *__shared_plugin;
                 prefix.hostmask = [o objectForKey:@"hostmask"];
                 m.sender = prefix;
                 
+                if(backlog)
+                    m.isPrintOnlyMessage = YES;
+
                 [client processIncomingMessage:m];
             }
             break;
@@ -308,6 +317,52 @@ IRCCloudPlugin *__shared_plugin;
                 prefix.hostmask = [o objectForKey:@"hostmask"];
                 m.sender = prefix;
                 
+                if(backlog)
+                    m.isPrintOnlyMessage = YES;
+
+                [client processIncomingMessage:m];
+            }
+            break;
+        case kIRCEventChannelMode:
+        case kIRCEventUserChannelMode:
+            client = [self getClient:o.cid];
+            if(client && [[o objectForKey:@"channel"] length] && [[o objectForKey:@"from"] length]) {
+                IRCMessageMutable *m = [[IRCMessageMutable alloc] init];
+                m.command = @"MODE";
+                m.params = @[[o objectForKey:@"channel"], [[o objectForKey:@"nick"] isKindOfClass:NSString.class]?[NSString stringWithFormat:@"%@ %@", [o objectForKey:@"diff"], [o objectForKey:@"nick"]]:[o objectForKey:@"diff"]];
+                m.receivedAt = [self dateFromObject:o];
+                
+                IRCPrefixMutable *prefix = [[IRCPrefixMutable alloc] init];
+                prefix.nickname = [o objectForKey:@"from"];
+                prefix.username = [o objectForKey:@"from_name"];
+                prefix.address = [o objectForKey:@"from_host"];
+                prefix.hostmask = [o objectForKey:@"hostmask"];
+                m.sender = prefix;
+                
+                if(backlog)
+                    m.isPrintOnlyMessage = YES;
+                
+                [client processIncomingMessage:m];
+            }
+            break;
+        case kIRCEventChannelTopic:
+            client = [self getClient:o.cid];
+            if(client && [[o objectForKey:@"chan"] length] && [[o objectForKey:@"author"] length]) {
+                IRCMessageMutable *m = [[IRCMessageMutable alloc] init];
+                m.command = @"TOPIC";
+                m.params = @[[o objectForKey:@"chan"], [[o objectForKey:@"topic"] isKindOfClass:NSString.class]?[o objectForKey:@"topic"]:@""];
+                m.receivedAt = [self dateFromObject:o];
+                
+                IRCPrefixMutable *prefix = [[IRCPrefixMutable alloc] init];
+                prefix.nickname = [o objectForKey:@"author"];
+                prefix.username = [o objectForKey:@"from_name"];
+                prefix.address = [o objectForKey:@"from_host"];
+                prefix.hostmask = [o objectForKey:@"hostmask"];
+                m.sender = prefix;
+                
+                if(backlog)
+                    m.isPrintOnlyMessage = YES;
+
                 [client processIncomingMessage:m];
             }
             break;
